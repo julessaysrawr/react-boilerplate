@@ -4,18 +4,18 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    main: './src/index.js',
+    main: './src/index.js'
   },
   output: {
     filename: '[name].[hash].js',
     path: path.resolve('./dist'),
   },
-  modules: {    // converts files other than vanilla js into valid modules for app & dependency graph
+  module: {    // converts files other than vanilla js into valid modules for app & dependency graph
     rules: [
       {
         test: /\.js$/,  // which files to be transformed
         exclude: ['node_modules'],
-        use: [{ laoder: 'babel-loader' }],  // which loader should to the transforming
+        use: [{ loader: 'babel-loader' }],  // which loader should to the transforming
       },
       {
         test: /\.s(a|c)ss$/,
@@ -33,6 +33,6 @@ module.exports = {
     new HtmlWebpackPlugin({   // generate an HTML5 file for you that includes all your webpack bundles in the body using script tags
       template: 'index.html'
     }),
-    new CleanWebpackPlugin(['dist'])
+    new CleanWebpackPlugin(['dist']),
   ]
 }
