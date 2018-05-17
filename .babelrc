@@ -1,0 +1,7 @@
+{
+  "presets": [ "env", "react", "stage-2"]
+}
+
+// env inclueds ES6, ES7, ES8
+// react is because babel doesn't undertsand react or jsx
+// stage-2 is for js features that are likely to be included in next ecmascript standard
